@@ -9,6 +9,6 @@ angular.module('coreApp')
       link: function () {
 
       },
-      templateUrl:'templates/testPostStatementsTmp.html'
+      templateUrl:'testPostStatementsTmp.html'
     }
   }]);

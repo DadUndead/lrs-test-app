@@ -70,8 +70,8 @@ var getPath = function (current_module) {
       //Common sources ===============================================================
       html: ['./src/index.html',current_module.src+'index.html'],
       templates: [
-        './src/engine/**/*.html',
-        current_module.src+'/templates/**/*.*'
+        './src/engine/app/directives/**/*.html',
+        current_module.src+'/templates/**/*.html'
       ],
       ts: './src/engine/**/*.ts',
       js: './src/engine/main.js',

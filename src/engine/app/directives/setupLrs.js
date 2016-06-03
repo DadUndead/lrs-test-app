@@ -9,6 +9,6 @@ angular.module('coreApp')
       link: function () {
 
       },
-      templateUrl:'templates/setupLrsTmp.html'
+      templateUrl:'setupLrsTmp.html'
     }
   }]);

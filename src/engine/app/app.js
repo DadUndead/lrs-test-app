@@ -1,7 +1,10 @@
 'use strict';
 
+var templates = angular.module("templates",[]);
+
 var coreApp = angular.module('coreApp',
   [
+    'templates',
     'ngAnimate',
     'ngMaterial',
     'ngStorage',

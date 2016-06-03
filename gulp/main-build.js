@@ -47,6 +47,7 @@ var pngquant = require('imagemin-pngquant'); //TODO: разобраться чт
 var manifest = require('gulp-scorm-manifest');
 //var zip = require('gulp-zip');
 
+var templateCache = require('gulp-angular-templatecache'); //puts angular templates to $templatecahce
 
 module.exports = function (options, current_module, pathCfg) {
 
@@ -126,19 +127,25 @@ module.exports = function (options, current_module, pathCfg) {
   /**
    * Сбор шаблонов для директив angular templates 'gulp templates:build'
    */
-  gulp.task('templates:build', ['clean-templates'], function () {
-    return gulp.src(pathCfg.src.templates)
-      .pipe(watch(pathCfg.src.templates))
-      .pipe(logger({
-        before: 'Mr Rigger is concating js files into one...',
+  gulp.task('templates:build', ['clean-templates'], function (cb) {
+    //var options = {
+    //  output: 'templates.js',
+    //  strip: '',
+    //  prepend: 'templates',
+    //  // angular module name
+    //  moduleName: 'templates',
+    //  minify: {}
+    //};
+
+    gulp.src(pathCfg.src.templates)
+      //.pipe(watch(pathCfg.src.templates))
+      .pipe(templateCache({
+        root:""
       }))
-      .pipe(rigger())
-      .pipe(rename({dirname: './'}))
-      .pipe(logger({
-        before: 'Mr Gulp is deploying file...',
-      }))
-      .pipe(gulp.dest(pathCfg.build.templates))
-      .pipe(gulp.start('webserver:reload'))
+      .pipe(gulp.dest(pathCfg.build.js))
+      //.pipe(gulp.start('webserver:reload'))
+
+    cb()
   });
 
 
