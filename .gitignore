@@ -1,0 +1,20 @@
+# yii console command
+/node_modules
+
+/bower_components
+
+
+/.idea
+/.sass-cache
+/assets/
+/build
+
+/.DS_Store
+*.DS_Store
+/preview
+
+/**/.sass-cache
+npm-debug.log
+platforms/
+_cordova/*/plugins
+_cordova/*/www/**/*.*

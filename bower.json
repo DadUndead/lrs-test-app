@@ -1,0 +1,30 @@
+{
+  "name": "TinCan LRS test",
+  "version": "0.0.1",
+  "authors": [
+    "Aleksey Klimenko <a.klimenko@nd.ru>"
+  ],
+  "license": "ISC",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "angular-animate": "^1.5.5",
+    "angular-touch": "~1.5.5",
+    "angular-material": "master",
+    "angular-highlightjs": "^0.6.1",
+    "highlightjs": "^9.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.2",
+    "angular-sanitize": "^1.5.3",
+    "angular-route": "^1.5.5",
+    "ngstorage": "^0.3.10",
+    "tincan": "^0.41.1"
+  }
+}

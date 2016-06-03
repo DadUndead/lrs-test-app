@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="ru" ng-csp>
+<head>
+
+    <meta charset="utf-8">
+    <title>TestTinCan LRS</title>
+    <meta name="description" content=" ">
+    <meta name="keywords" content=" ">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta http-equiv="content-language" content="ru-Ru">
+
+    <link rel="stylesheet" href="css/lib.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+<div id="courseBody" ng-controller="MainCtrl as main" layout="column">
+    <!--Панель в шапке-->
+    <md-toolbar class="md-hue" layout layout-align="center center">
+        <md-title>Test TinCan Module</md-title>
+    </md-toolbar>
+
+    <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs="always" >
+        <md-tab label="Setup LRS">
+            <md-content class="md-padding">
+                <setup-lrs></setup-lrs>
+            </md-content>
+        </md-tab>
+
+        <md-tab label="Test PUT Statement">
+            <md-content class="md-padding">
+                <test-put-statement></test-put-statement>
+            </md-content>
+        </md-tab>
+
+        <md-tab label="Test POST Statements">
+            <md-content class="md-padding">
+                <test-post-statements></test-post-statements>
+            </md-content>
+        </md-tab>
+
+        <md-tab label="Test save State">
+            <md-content class="md-padding">
+                <test-save-state></test-save-state>
+            </md-content>
+        </md-tab>
+    </md-tabs>
+</div>
+<script src="js/lib.min.js"></script>
+<script src="js/main.min.js"></script>
+</body>
+</html>
