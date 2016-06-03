@@ -1,6 +1,8 @@
 /**
  * Created by User on 6/3/2016.
  */
+'use strict';
+ 
 angular.module('coreApp')
   .controller('TestSaveStateCtrl',
     [

@@ -8,12 +8,6 @@ var coreApp = angular.module('coreApp',
     'hljs'
   ]);
 
-/*
- Не рекомендуется использовать routeProvider, так как ряд СДО включают курс в свои окна и для выхода используют
- навигацию. Такое взаимодейсвтие может привести к негативному опыту.
- */
-
-//Before angular bootstrap ###################################
 angular.element(document).ready(preConfig);
 
 function preConfig() {
@@ -21,15 +15,15 @@ function preConfig() {
   var course =
   {
     "course": {
-      "title": "Демо Курс",
+      "title": "Demo course",
       "chapters": [
         {
           "id": "1",
-          "title": "Название 1 главы",
+          "title": "Chapter 1 title",
           "pages": [
             {
               "id": "page_1_0",
-              "title": "Название страницы 1_0",
+              "title": "Page 1_0 title",
               "components": [
                 {
                   "pageTemplateUrl": "templates/page_1_0.html"
