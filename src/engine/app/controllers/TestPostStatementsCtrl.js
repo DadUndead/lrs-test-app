@@ -21,7 +21,7 @@ angular.module('coreApp')
         self.addRandomStatement = function () {
           var actor = self.actors[Math.floor(Math.random()*self.actors.length)];
           var activity = self.activities[Math.floor(Math.random()*self.activities.length)];
-          var verb = self.verbs[Math.floor(Math.random()*self.verbs.length)];
+          var verb = self.verbs[Math.floor(Math.random()*(self.verbs.length-1))];
 
 
           var stmt = new TinCan.Statement({
