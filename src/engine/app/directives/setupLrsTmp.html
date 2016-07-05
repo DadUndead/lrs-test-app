@@ -4,42 +4,39 @@
      layout-align-gt-sm="center start"
      ng-controller="SetupLrsCtrl as ctrl">
 
-    <md-card flex-xs flex-sm flex-gt-sm="50"
+    <md-card flex-gt-sm="50"
              md-colors="{background:'background-50'}">
         <md-card-header>
             LRS list
         </md-card-header>
 
-        <md-card-content
-                flex
-                layout-padding>
-            <md-list-item class="md-3-line"
-                          ng-repeat="lrs in ctrl.lrsList"
-                          layout-padding-sm
-                          layout-xs="column"
-                          layout-sm="column"
-                          layout-gt-sm="row">
-                <div class="md-list-item-text md-whiteframe-2dp"
-                     flex="100"
-                     md-colors="{background: 'background-200'}">
-                    <h3>{{lrs.id}}</h3>
-                    <h3>{{lrs.endpoint}}</h3>
-                    <h3>{{lrs.username}}</h3>
-                    <h3>{{lrs.password}}</h3>
-                    <div ng-if="lrs" hljs hljs-source="'{{ctrl.lrsObjects[$index]}}'"></div>
-                </div>
+        <md-card-content layout-padding>
+                <md-list-item class="md-3-line"
+                              ng-repeat="lrs in ctrl.lrsList"
+                              layout-padding-sm
+                              layout-xs="column"
+                              layout-sm="column"
+                              layout-gt-sm="row">
+                    <div class="md-list-item-text md-whiteframe-2dp"
+                         flex="100"
+                         md-colors="{background: 'background-200'}">
+                        <h3>{{lrs.id}}</h3>
+                        <h3>{{lrs.endpoint}}</h3>
+                        <h3>{{lrs.username}}</h3>
+                        <h3>{{lrs.password}}</h3>
+                        <div ng-if="lrs" hljs hljs-source="'{{ctrl.lrsObjects[$index]}}'"></div>
+                    </div>
 
-                <md-button
-                        class="md-raised md-primary"
-                        ng-click="ctrl.removeLrs($index)">
-                    Delete
-                </md-button>
-            </md-list-item>
-
+                    <md-button
+                            class="md-raised md-primary"
+                            ng-click="ctrl.removeLrs($index)">
+                        Delete
+                    </md-button>
+                </md-list-item>
         </md-card-content>
     </md-card>
 
-    <md-card flex-xs flex-sm flex-gt-sm="50"
+    <md-card flex-gt-sm="50"
              md-colors="{background:'background-50'}">
 
         <md-card-header>
