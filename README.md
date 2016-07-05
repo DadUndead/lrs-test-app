@@ -6,7 +6,7 @@
 - Setup LRS: Specify your LRS and add in to lrs list to work with it
 - TEST PUT STATEMENT: create your own statement from dropdown menus and try to send it.
 - TEST POST STATEMENTS: create random statements and add them to statement list. And again - try to send it
-- TEST SAVE STATE: try to send predefined object as state.
+- TEST STATE: try to send predefined object as state and retrieve it later on.
 
 If LRS works well you will see it's endpoint in _successed_ block.
 Otherwise, if LRS doesn't do what you want - it will appear in _errors_ block.
