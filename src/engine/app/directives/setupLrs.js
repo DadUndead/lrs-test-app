@@ -7,8 +7,10 @@ angular.module('coreApp')
     return {
       replace: false,
       link: function () {
-
       },
-      templateUrl:'setupLrsTmp.html'
+      scope: {
+        showAddLrsDialog: '='
+      },
+      templateUrl: 'setupLrsTmp.html'
     }
   }]);

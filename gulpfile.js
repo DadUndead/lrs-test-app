@@ -93,7 +93,8 @@ var getPath = function (current_module) {
       style: './src/sass/',
       fonts: [
         './fonts/**/*.*',
-        bower_dir + 'mobile-angular-ui/dist/fonts/*.*'
+        bower_dir + 'mobile-angular-ui/dist/fonts/*.*',
+        bower_dir + 'mdi/fonts/*.*'
       ],
       theme: './src/themes/' + current_module.theme + '/**/*.*',
 
@@ -101,7 +102,8 @@ var getPath = function (current_module) {
       libCSS: [
         './src/sass/lib/**/*.css',
         bower_dir + 'angular-material/angular-material.min.css',
-        bower_dir + 'highlightjs/styles/darkula.css'
+        bower_dir + 'highlightjs/styles/darkula.css',
+        bower_dir + 'mdi/css/materialdesignicons.min.css'
       ],
 
       //Module custom sources =========================================================

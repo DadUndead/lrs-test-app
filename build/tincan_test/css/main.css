@@ -34,3 +34,12 @@ md-backdrop {
 .flex * {
   min-height: 1px;
 }
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WORK\/ND_projects\/tincan-test\/src\/sass\/main\.scss}line{font-family:\0000335}}
+.md-button.md-fab.md-fab-bottom-right {
+  top: auto;
+  right: 20px;
+  bottom: 20px;
+  left: auto;
+  position: fixed;
+}

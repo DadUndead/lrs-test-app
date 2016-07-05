@@ -30,14 +30,14 @@ angular.module('coreApp')
             });
           ctrl.lrsList = $tincanConfig.lrs;
           ctrl.lrsObjects = TinCanManager.get.lrsList;
-          ctrl.lrsId='';
-          ctrl.lrsEndpoint='';
-          ctrl.lrsUsername='';
-          ctrl.lrsPassword='';
+          ctrl.lrsId = '';
+          ctrl.lrsEndpoint = '';
+          ctrl.lrsUsername = '';
+          ctrl.lrsPassword = '';
         };
 
-        ctrl.removeLrs = function(index){
-          $tincanConfig.lrs.splice(index,1);
+        ctrl.removeLrs = function (index) {
+          $tincanConfig.lrs.splice(index, 1);
           ctrl.lrsList = $tincanConfig.lrs;
           ctrl.lrsObjects = TinCanManager.get.lrsList;
         };

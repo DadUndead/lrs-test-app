@@ -8,6 +8,8 @@ angular.module('coreApp')
   .controller('MainCtrl',
     ['$scope',
       function ($scope) {
+
+        var self = this;
       }]);
 
 

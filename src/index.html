@@ -29,11 +29,14 @@
     <md-tabs md-dynamic-height
              md-border-bottom
              md-stretch-tabs="auto"
+             md-selected="data.selectedTab"
              class="md-primary  md-hue-2">
         <md-tab label="Setup LRS">
             <md-content class="md-padding"
                         md-colors="{background:'primary-50'}">
-                <setup-lrs></setup-lrs>
+                <setup-lrs
+                        data-show-add-lrs-dialog="main.showAddLrsDialog"
+                ></setup-lrs>
             </md-content>
         </md-tab>
 
@@ -58,6 +61,28 @@
             </md-content>
         </md-tab>
     </md-tabs>
+    <md-button ng-if="data.selectedTab==0&&!main.showAddLrsDialog"
+               class="md-fab md-fab-bottom-right"
+               aria-label="Add LMS"
+                ng-click="main.showAddLrsDialog=!main.showAddLrsDialog">
+        <md-icon
+                 md-font-icon="mdi-plus"
+                 class="mdi"
+                 alt="addLms"
+                 ng-style="{'font-size': '36px'}">
+            </md-icon>
+    </md-button>
+    <md-button ng-if="data.selectedTab==0&&!!main.showAddLrsDialog"
+               class="md-fab md-fab-bottom-right"
+               aria-label="Add LMS"
+                ng-click="main.showAddLrsDialog=!main.showAddLrsDialog">
+        <md-icon
+                 md-font-icon="mdi-arrow-right"
+                 class="mdi"
+                 alt="addLms"
+                 ng-style="{'font-size': '36px'}">
+        </md-icon>
+    </md-button>
 </div>
     <span flex layout-fill></span>
 <script src="js/lib.min.js"></script>
