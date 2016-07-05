@@ -404,6 +404,7 @@ angular.module('coreApp')
 
         var result_states = [];
         var errors = [];
+        var successed = [];
 
         var response_counter = 0;
 
@@ -418,9 +419,15 @@ angular.module('coreApp')
                 if (err !== null) {
 
                   console.log("Failed to get state: ", err);
-                  errors.push(err);
+                  errors.push({
+                    lrs: lrs.endpoint,
+                    err: err,
+                  })
                 } else {
-                  result_states.push(result);
+                  successed.push({
+                    result: result,
+                    lrs: lrs.endpoint
+                  });
                 }
 
                 countResponse();
@@ -432,10 +439,10 @@ angular.module('coreApp')
         function countResponse() {
           response_counter++;
           if (response_counter == TM.get.lrsList.length) {
-            if (result_states.length > 0) {
+            if (successed.length > 0) {
               deferred.resolve({
                 msg: 'success',
-                results: result_states,
+                successed: successed,
                 errList: errors
               });
             } else {

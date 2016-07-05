@@ -59,8 +59,8 @@ function preConfig() {
         "password": "MegaLearner2016"
       },
       {
-        "id": "webtutor",
-        "endpoint": "http://dn-srv7:8000/lrs",
+        "id": "webtutor:local",
+        "endpoint": "http://localhost:8000/lrs",
         "username": "user1",
         "password": "user1"
       }

@@ -17,40 +17,49 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body>
+<body layout="column"
+      md-colors="{background:'primary-50'}">
 
 <div id="courseBody" ng-controller="MainCtrl as main" layout="column">
     <!--Панель в шапке-->
-    <md-toolbar class="md-hue" layout layout-align="center center">
+    <md-toolbar class="md-primary md-hue-1" layout layout-align="center center">
         <md-title>Test TinCan Module</md-title>
     </md-toolbar>
 
-    <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs="always" >
+    <md-tabs md-dynamic-height
+             md-border-bottom
+             md-stretch-tabs="always"
+             class="md-primary  md-hue-2">
         <md-tab label="Setup LRS">
-            <md-content class="md-padding">
+            <md-content class="md-padding"
+                        md-colors="{background:'primary-50'}">
                 <setup-lrs></setup-lrs>
             </md-content>
         </md-tab>
 
         <md-tab label="Test PUT Statement">
-            <md-content class="md-padding">
+            <md-content class="md-padding"
+                        md-colors="{background:'primary-50'}">
                 <test-put-statement></test-put-statement>
             </md-content>
         </md-tab>
 
         <md-tab label="Test POST Statements">
-            <md-content class="md-padding">
+            <md-content class="md-padding"
+                        md-colors="{background:'primary-50'}">
                 <test-post-statements></test-post-statements>
             </md-content>
         </md-tab>
 
-        <md-tab label="Test save State">
-            <md-content class="md-padding">
+        <md-tab label="Test State">
+            <md-content class="md-padding"
+                        md-colors="{background:'primary-50'}">
                 <test-save-state></test-save-state>
             </md-content>
         </md-tab>
     </md-tabs>
 </div>
+    <span flex layout-fill></span>
 <script src="js/lib.min.js"></script>
 <script src="js/main.min.js"></script>
 <script src="js/templates.js"></script>

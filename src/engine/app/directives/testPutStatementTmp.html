@@ -52,23 +52,27 @@
 
 
     <md-card-footer layout="column"  layout-align="center stretch">
-        <md-card flex="100">
-            <md-card-content md-colors="{background: 'yellow'}">
+        <div layout-padding flex="100"
+             ng-if="!!ctrl.getStatement()"
+             class="md-whiteframe-5dp"
+                md-colors="{background:'yellow'}">
                 {{ctrl.getStatement().toString()}}
-            </md-card-content>
-        </md-card>
+        </div>
         <md-button
-                class="md-raised"
-                ng-click="ctrl.sendStatement($event)">
+                class="md-raised md-warn"
+                ng-click="ctrl.sendStatement($event)"
+                ng-disabled="!ctrl.getStatement()">
             Send Statement
         </md-button>
+        <md-button ng-if="!!ctrl.requestResults"
+                   class="md-raised md-accent"
+                   ng-click="ctrl.requestResults=null">
+            Clear
+        </md-button>
 
-        <md-card flex="100">
-            <md-card-content>
-                errors:{{ctrl.requestResults.errList}}
-                <hr>
-                successed:{{ctrl.requestResults.successed}}
-            </md-card-content>
-        </md-card>
+        <request-results
+                data-errors="ctrl.requestResults.errList"
+                data-successed="ctrl.requestResults.successed">
+        </request-results>
     </md-card-footer>
 </md-card>

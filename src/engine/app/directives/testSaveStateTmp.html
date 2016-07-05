@@ -1,28 +1,70 @@
-<md-card layout-padding="" ng-controller="TestSaveStateCtrl as ctrl">
-    <md-card-header>
-        Test Save State
-    </md-card-header>
+<div layout="row" layout-align="center start">
+    <md-card flex="50"
+             layout-padding
+             layout-align="start"
+             ng-controller="TestSaveStateCtrl as ctrl">
+        <md-card-header>
+            Test Save State
+        </md-card-header>
 
-    <md-card-content>
+        <md-card-content>
 
-        <md-header class="md-primary">
-            <h4>State to save in LRS:</h4>
-            <span ng-if="ctrl.progress" hljs hljs-source="'{{ctrl.progress}}'"></span>
-        </md-header>
+            <md-header class="md-primary">
+                <h4>State to save in LRS:</h4>
+                <span ng-if="ctrl.progress" hljs hljs-source="'{{ctrl.progress}}'"></span>
+            </md-header>
 
-    <md-card-footer layout="column"  layout-align="center stretch">
-        <md-button
-                class="md-raised"
-                ng-click="ctrl.saveState('progress',ctrl.progress)">
-            Save State
-        </md-button>
+        </md-card-content>
+        <md-card-footer layout="column" layout-align="start stretch">
+            <md-button
+                    class="md-raised md-warn"
+                    ng-click="ctrl.saveState('progress',ctrl.progress)">
+                Save State
+            </md-button>
+            <md-button ng-if="!!ctrl.requestResults"
+                       class="md-raised md-accent"
+                       ng-click="ctrl.requestResults=null">
+                Clear
+            </md-button>
 
-        <md-card flex="100">
-            <md-card-content>
-                errors:{{ctrl.requestResults.errList}}
-                <hr>
-                succesed:{{ctrl.requestResults.successed}}
-            </md-card-content>
-        </md-card>
-    </md-card-footer>
-</md-card>
+            <request-results
+                    data-errors="ctrl.requestResults.errList"
+                    data-successed="ctrl.requestResults.successed">
+            </request-results>
+        </md-card-footer>
+    </md-card>
+
+    <md-card flex="50"
+             layout-padding
+             layout-align="start"
+             ng-controller="TestGetStateCtrl as ctrl">
+        <md-card-header>
+            Test Get State
+        </md-card-header>
+        <md-card-content>
+            <md-header class="md-primary">
+                <h4>Get State from LRS:</h4>
+                <span hljs hljs-source="'progress'"></span>
+            </md-header>
+
+        </md-card-content>
+        <md-card-footer layout="column" layout-align="start stretch">
+            <md-button
+                    class="md-raised md-warn"
+                    ng-click="ctrl.getState('progress')">
+                Get State
+            </md-button>
+            <md-button ng-if="!!ctrl.requestResults"
+                       class="md-raised md-accent"
+                       ng-click="ctrl.requestResults=null">
+                Clear
+            </md-button>
+
+            <request-results
+                    data-errors="ctrl.requestResults.errList"
+                    data-successed="ctrl.requestResults.successed">
+            </request-results>
+
+        </md-card-footer>
+    </md-card>
+</div>

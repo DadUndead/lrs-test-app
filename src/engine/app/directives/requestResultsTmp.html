@@ -1,0 +1,19 @@
+<md-card flex="100">
+    <md-card-content>
+        errors:
+        <div ng-repeat="eItem in errors track by $index">
+            <div>LRS endpoint: {{eItem.lrs}}</div>
+            <div>ERROR: {{eItem.err}}</div>
+            <div ng-if="!!eItem.xhr">XHR: {{eItem.xhr}}</div>
+        </div>
+        <hr>
+        succesed:
+        <div ng-repeat="sItem in successed track by $index">
+            <div>LRS endpoint: {{sItem.lrs}}</div>
+            <div ng-if="!!sItem.result">
+                <span>RESULT:</span>
+                <span hljs hljs-source="'{{sItem.result}}'"></span>
+            </div>
+        </div>
+    </md-card-content>
+</md-card>

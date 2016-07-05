@@ -12,13 +12,13 @@
             </div>
 
             <md-button
-                    class="md-raised"
+                    class="md-raised md-primary"
                     ng-click="ctrl.removeStatement($index)">
-                Удалить
+                DELETE
             </md-button>
         </md-list-item>
         <md-button
-                class="md-raised"
+                class="md-raised md-accent"
                 ng-click="ctrl.addRandomStatement($event)">
             Add random Statement
         </md-button>
@@ -27,17 +27,21 @@
 
     <md-card-footer layout="column"  layout-align="center stretch">
         <md-button
-                class="md-raised"
-                ng-click="ctrl.sendStatements($event)">
+                class="md-raised md-warn"
+                ng-click="ctrl.sendStatements($event)"
+                ng-disabled="!ctrl.statements">
             Send Statements
         </md-button>
+        <md-button ng-if="!!ctrl.requestResults"
+                   class="md-raised md-accent"
+                   ng-click="ctrl.requestResults=null">
+            Clear
+        </md-button>
 
-        <md-card flex="100">
-            <md-card-content>
-                errors:{{ctrl.requestResults.errList}}
-                <hr>
-                successed:{{ctrl.requestResults.successed}}
-            </md-card-content>
-        </md-card>
+
+        <request-results
+                data-errors="ctrl.requestResults.errList"
+                data-successed="ctrl.requestResults.successed">
+        </request-results>
     </md-card-footer>
 </md-card>
