@@ -1,0 +1,33 @@
+//IOS onchangeorientation bugfix
+md-backdrop {
+  height: 100% !important;
+}
+
+.md-dialog-container {
+  height: 100% !important;
+}
+
+/*
+ * IOS flex-shrink bugfix
+ * https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
+ */
+
+.shrink-fix {
+  flex-shrink: 0;
+}
+
+.flex-min-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Flexbug IE10-11 images + aspect ratio (workaround)
+ * Expected behavior: Flex item height reflects resized image
+ * Actual behavior: Flex item height reflects image height before resizing
+ *
+ * 1. Add min-height: 1px to the flex item.
+ */
+.flex * {
+  min-height: 1px;
+}

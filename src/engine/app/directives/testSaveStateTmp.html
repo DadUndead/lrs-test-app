@@ -31,6 +31,7 @@
             </md-button>
 
             <request-results
+                    ng-if="!!ctrl.requestResults"
                     data-errors="ctrl.requestResults.errList"
                     data-successed="ctrl.requestResults.successed">
             </request-results>
@@ -64,6 +65,7 @@
             </md-button>
 
             <request-results
+                    ng-if="!!ctrl.requestResults"
                     data-errors="ctrl.requestResults.errList"
                     data-successed="ctrl.requestResults.successed">
             </request-results>

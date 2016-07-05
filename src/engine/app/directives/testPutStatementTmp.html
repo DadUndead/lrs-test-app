@@ -51,12 +51,13 @@
     </md-card-content>
 
 
-    <md-card-footer layout="column"  layout-align="center stretch">
-        <div layout-padding flex="100"
-             ng-if="!!ctrl.getStatement()"
-             class="md-whiteframe-5dp"
-                md-colors="{background:'yellow'}">
+    <md-card-footer layout="column" layout-align="center stretch">
+        <div class="flex-min-wrapper" layout-padding>
+            <div ng-if="!!ctrl.getStatement()"
+                 class="md-whiteframe-5dp"
+                 md-colors="{background:'yellow'}">
                 {{ctrl.getStatement().toString()}}
+            </div>
         </div>
         <md-button
                 class="md-raised md-warn"
@@ -71,6 +72,7 @@
         </md-button>
 
         <request-results
+                ng-if="!!ctrl.requestResults"
                 data-errors="ctrl.requestResults.errList"
                 data-successed="ctrl.requestResults.successed">
         </request-results>

@@ -4,7 +4,9 @@
         <div ng-repeat="eItem in errors track by $index">
             <div>LRS endpoint: {{eItem.lrs}}</div>
             <div>ERROR: {{eItem.err}}</div>
-            <div ng-if="!!eItem.xhr">XHR: {{eItem.xhr}}</div>
+            <div ng-if="!!eItem.xhr">
+                XHR: <span hljs hljs-source="'{{eItem.xhr}}'"></span>
+            </div>
         </div>
         <hr>
         succesed:

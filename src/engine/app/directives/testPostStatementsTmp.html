@@ -7,7 +7,12 @@
         <md-list-item class="md-2-line"
                       ng-repeat="statement in ctrl.statements">
             <div class="md-list-item-text" layout="column">
-                <h3 md-colors="{background: 'yellow'}">{{statement.toString()}}</h3>
+                <div class="flex-min-wrapper" layout-padding>
+                    <div class="md-whiteframe-5dp"
+                         md-colors="{background:'yellow'}">
+                        {{statement.toString()}}
+                    </div>
+                </div>
                 <span ng-if="statement" hljs hljs-source="'{{statement}}'"></span>
             </div>
 
@@ -40,6 +45,7 @@
 
 
         <request-results
+                ng-if="!!ctrl.requestResults"
                 data-errors="ctrl.requestResults.errList"
                 data-successed="ctrl.requestResults.successed">
         </request-results>

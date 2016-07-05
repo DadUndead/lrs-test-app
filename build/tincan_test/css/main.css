@@ -1,0 +1,36 @@
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WORK\/ND_projects\/tincan-test\/src\/sass\/main\.scss}line{font-family:\000032}}
+md-backdrop {
+  height: 100% !important;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WORK\/ND_projects\/tincan-test\/src\/sass\/main\.scss}line{font-family:\000036}}
+.md-dialog-container {
+  height: 100% !important;
+}
+
+/*
+ * IOS flex-shrink bugfix
+ * https://github.com/philipwalton/flexbugs#1-minimum-content-sizing-of-flex-items-not-honored
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WORK\/ND_projects\/tincan-test\/src\/sass\/main\.scss}line{font-family:\0000315}}
+.shrink-fix {
+  flex-shrink: 0;
+}
+
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WORK\/ND_projects\/tincan-test\/src\/sass\/main\.scss}line{font-family:\0000319}}
+.flex-min-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+/**
+ * Flexbug IE10-11 images + aspect ratio (workaround)
+ * Expected behavior: Flex item height reflects resized image
+ * Actual behavior: Flex item height reflects image height before resizing
+ *
+ * 1. Add min-height: 1px to the flex item.
+ */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/WORK\/ND_projects\/tincan-test\/src\/sass\/main\.scss}line{font-family:\0000331}}
+.flex * {
+  min-height: 1px;
+}
